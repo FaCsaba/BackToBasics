@@ -1,4 +1,5 @@
 #include <assert.h>
+
 int ARRAY[] = { 67, 69, 420, 1337 };
 int ARRAY_LEN = sizeof(ARRAY)/sizeof(*ARRAY);
 
