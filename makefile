@@ -1,9 +1,13 @@
 all: out/array out/dynamic_array
 
-.PHONY: test
-test:
+.PHONY: test clean
+test: clean out/array out/dynamic_array
 	out/array
 	out/dynamic_array
+
+clean:
+	rm -f out/array
+	rm -f out/dynamic_array
 
 out:
 	mkdir out
