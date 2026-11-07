@@ -1,17 +1,17 @@
-all: out/array out/dynamic_array out/singly_linked_list out/stack
+all: out/array out/dynamic_array out/singly_linked_list out/stack out/enum_union out/vtable out/runtime_vtable
 
 .PHONY: test clean
-test: out/array out/dynamic_array out/singly_linked_list out/stack
+test: out/array out/dynamic_array out/singly_linked_list out/stack out/enum_union out/vtable out/runtime_vtable
 	out/array
 	out/dynamic_array
 	out/singly_linked_list
 	out/stack
+	out/enum_union
+	out/vtable
+	out/runtime_vtable
 
 clean:
-	rm -f out/array
-	rm -f out/dynamic_array
-	rm -f out/singly_linked_list
-	rm -f out/stack
+	rm -rf out
 
 out:
 	mkdir -p out
@@ -27,3 +27,12 @@ out/singly_linked_list: out
 
 out/stack: out
 	cc -o out/stack datastructures_and_algorithms/stack/stack.c
+
+out/enum_union: out
+	cc -o out/enum_union interface/enum_union.c
+
+out/vtable: out
+	cc -o out/vtable interface/vtable.c
+
+out/runtime_vtable: out
+	cc -o out/runtime_vtable interface/runtime_vtable.c
